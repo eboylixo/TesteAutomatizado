@@ -23,21 +23,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import type Cliente from "../interfaces/Cliente.ts";
-import http from "../http";
+import { defineComponent, type PropType } from 'vue';
+import type Cliente from "../interfaces/Cliente";
 
 export default defineComponent({
     name: "ListaCliente",
-    data() {
-        return {
-            clientes: [] as Cliente[]
+    props: {
+        clientes: {
+            type: [] as PropType<Cliente[]>,
+            required: true
         }
     },
-    async mounted() {
-        const response = await http.get("/cliente");
-        this.clientes = response.data;
-    }
+    
 })
 </script>
 

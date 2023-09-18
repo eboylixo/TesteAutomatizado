@@ -20,7 +20,7 @@
             <label for="cpf" class="form-label">CPF</label>
             <input type="text" class="form-control" id="cpf" v-model="cliente.cpf">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
 </template>
 
@@ -37,10 +37,13 @@ export default defineComponent({
         }
     },
     methods: {
-        salvarCliente() {
-            http.post("/cliente", this.cliente);
+        async salvarCliente() {
+            await http.post("/cliente", this.cliente);
+            this.cliente = {} as Cliente;
+            this.$emit("aoSalvarCliente");
         }
-    }
+    },
+    emits: ["aoSalvarCliente"]
 })
 </script>
 
