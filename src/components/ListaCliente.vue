@@ -7,6 +7,7 @@
                 <th scope="col">Endereço</th>
                 <th scope="col">Email</th>
                 <th scope="col">CPF</th>
+                <th scope="col">Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -16,6 +17,11 @@
                 <td>{{ cliente.endereco }}</td>
                 <td>{{ cliente.email }}</td>
                 <td>{{ cliente.cpf }}</td>
+                <td>
+                    <button type="button" class="btn btn-danger" @click="$emit('aoExcluirCliente', cliente.id)">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
             </tr>
             
         </tbody>
@@ -34,7 +40,7 @@ export default defineComponent({
             required: true
         }
     },
-    
+    emits: ["aoExcluirCliente"]
 })
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-    <form>
+    <form @submit.prevent="salvarProduto">
         <div class="mb-3">
             <label for="titulo" class="form-label">Titulo</label>
             <input type="text" class="form-control" id="titulo" v-model="produto.titulo">
