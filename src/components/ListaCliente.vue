@@ -36,7 +36,7 @@ export default defineComponent({
     name: "ListaCliente",
     props: {
         clientes: {
-            type: [] as PropType<Cliente[]>,
+            type: Array as PropType<Cliente[]>,
             required: true
         }
     },

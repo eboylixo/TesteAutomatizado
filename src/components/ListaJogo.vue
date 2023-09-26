@@ -40,7 +40,7 @@ export default defineComponent({
     name: "ListaJogo",
     props: {
         jogos: {
-            type: [] as PropType<Jogo[]>,
+            type: Array as PropType<Jogo[]>,
             required: true
         }
     },

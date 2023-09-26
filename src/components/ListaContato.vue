@@ -34,7 +34,7 @@ export default defineComponent({
     name: "ListaContato",
     props: {
         contatos: {
-            type: [] as PropType<Contato[]>,
+            type: Array as PropType<Contato[]>,
             required: true
         }
     },
