@@ -10,7 +10,7 @@
         </div>
         <div class="mb-3">
             <label for="preco" class="form-label">Preço</label>
-            <input type="number" class="form-control" id="preco" v-model="produto.preco">
+            <input type="number" class="form-control" id="preco" step="any" v-model="produto.preco">
         </div>
         <div class="mb-3">
             <label for="prazo" class="form-label">Prazo Entrega</label>
