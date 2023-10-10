@@ -19,6 +19,12 @@
 	          <li class="nav-item">
 	            <RouterLink class="nav-link" to="/jogo">Jogos</RouterLink>
 	          </li>
+			  <li class="nav-item">
+	            <RouterLink class="nav-link" to="/novo-usuario">Novo Usuário</RouterLink>
+	          </li>
+			  <li class="nav-item">
+				<a class="nav-link" role="button" @click="logout">Logout</a>
+			  </li>
 	        </ul>
 	      </div>
 	    </div>
@@ -30,6 +36,12 @@ import { defineComponent } from 'vue';
 
 
 export default defineComponent({
-	name: "NavMenu"
+	name: "NavMenu",
+	methods: {
+		logout() {
+			localStorage.removeItem("token");
+			this.$router.push("/login");
+		}
+	}
 })
 </script>
