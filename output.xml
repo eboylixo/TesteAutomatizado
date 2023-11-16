@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20231116 15:56:21.651" rpa="false" schemaversion="4">
+<suite id="s1" name="Tests" source="c:\Users\gabriel_correia\Desktop\Front-Teste\shark-front\tests">
+<suite id="s1-s1" name="Functional" source="c:\Users\gabriel_correia\Desktop\Front-Teste\shark-front\tests\functional">
+<suite id="s1-s1-s1" name="Cliente" source="c:\Users\gabriel_correia\Desktop\Front-Teste\shark-front\tests\functional\Cliente.robot">
+<test id="s1-s1-s1-t1" name="Deve cadastrar cliente" line="16">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Iniciar navegador</arg>
+<arg>Logar</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Iniciar navegador" library="Functional">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>headless=false</arg>
+<arg>slowMo=00:00:00.7</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20231116 15:56:22.428" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 700.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\gabriel_correia\\Desktop\\Front-Teste\\shark-front\\browser\\traces\\7c047616-efb8-44a5-891d-d6237a1e63cb"}</msg>
+<msg timestamp="20231116 15:56:22.976" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":700,"timeout":30000,"tracesDir":"C:\\Users\\gabriel_correia\\Desktop\\Front-Teste\\shark-front\\browser\\traces\\7c047616-efb8-44a5-891d-d6237a1e63cb"}</msg>
+<status status="PASS" starttime="20231116 15:56:22.427" endtime="20231116 15:56:22.976"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20231116 15:56:22.977" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": "",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg timestamp="20231116 15:56:22.994" level="INFO">Successfully created context. </msg>
+<msg timestamp="20231116 15:56:22.994" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': '', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<status status="PASS" starttime="20231116 15:56:22.977" endtime="20231116 15:56:22.995"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${LINK}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20231116 15:56:25.918" level="INFO">Successfully initialized new page object and opened url: http://localhost:5173/#/login</msg>
+<status status="PASS" starttime="20231116 15:56:22.995" endtime="20231116 15:56:25.919"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>${LARGURA_JANELA}</arg>
+<arg>${ALTURA_JANELA}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20231116 15:56:25.928" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20231116 15:56:25.919" endtime="20231116 15:56:25.928"/>
+</kw>
+<status status="PASS" starttime="20231116 15:56:22.427" endtime="20231116 15:56:25.928"/>
+</kw>
+<kw name="Logar" library="LoginKeyWords">
+<kw name="Click" library="Browser">
+<arg>text=Logout</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20231116 15:56:25.929" endtime="20231116 15:56:26.710"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>xpath=//*[@id="exampleInputEmail1"]</arg>
+<arg>${EMAIL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231116 15:56:26.710" level="INFO">Types the text 'senai1@gmail.com' in the given field.</msg>
+<status status="PASS" starttime="20231116 15:56:26.710" endtime="20231116 15:56:28.165"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>xpath=//*[@id="exampleInputPassword1"]</arg>
+<arg>${SENHA}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231116 15:56:28.165" level="INFO">Types the text '123456' in the given field.</msg>
+<status status="PASS" starttime="20231116 15:56:28.165" endtime="20231116 15:56:29.616"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>text=Login</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20231116 15:56:29.616" endtime="20231116 15:56:30.354"/>
+</kw>
+<status status="PASS" starttime="20231116 15:56:25.928" endtime="20231116 15:56:30.354"/>
+</kw>
+<status status="PASS" starttime="20231116 15:56:22.427" endtime="20231116 15:56:30.354"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>xpath=//*[@id="nome"]</arg>
+<arg>robot teste</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231116 15:56:30.355" level="INFO">Types the text 'robot teste' in the given field.</msg>
+<status status="PASS" starttime="20231116 15:56:30.355" endtime="20231116 15:56:31.805"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>xpath=//*[@id="email"]</arg>
+<arg>robot@gmail.com</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231116 15:56:31.806" level="INFO">Types the text 'robot@gmail.com' in the given field.</msg>
+<status status="PASS" starttime="20231116 15:56:31.806" endtime="20231116 15:56:33.257"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>xpath=//*[@id="endereco"]</arg>
+<arg>Rua dos Patos</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231116 15:56:33.257" level="INFO">Types the text 'Rua dos Patos' in the given field.</msg>
+<status status="PASS" starttime="20231116 15:56:33.257" endtime="20231116 15:56:34.713"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>xpath=//*[@id="dt-nascimento"]</arg>
+<arg>01012000</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231116 15:56:34.714" level="INFO">Types the text '01012000' in the given field.</msg>
+<status status="PASS" starttime="20231116 15:56:34.714" endtime="20231116 15:56:36.154"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>xpath=//*[@id="cpf"]</arg>
+<arg>123.456.789-00</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231116 15:56:36.155" level="INFO">Types the text '123.456.789-00' in the given field.</msg>
+<status status="PASS" starttime="20231116 15:56:36.155" endtime="20231116 15:56:37.604"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=//*[@type='submit']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20231116 15:56:37.605" endtime="20231116 15:56:38.341"/>
+</kw>
+<kw name="finalizar teste" library="Functional" type="TEARDOWN">
+<kw name="Take Screenshot" library="Browser">
+<arg>fullPage=true</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20231116 15:56:38.459" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231116 15:56:38.342" endtime="20231116 15:56:38.459"/>
+</kw>
+<status status="PASS" starttime="20231116 15:56:38.341" endtime="20231116 15:56:38.459"/>
+</kw>
+<status status="PASS" starttime="20231116 15:56:22.424" endtime="20231116 15:56:38.460"/>
+</test>
+<status status="PASS" starttime="20231116 15:56:21.677" endtime="20231116 15:56:38.524"/>
+</suite>
+<suite id="s1-s1-s2" name="User" source="c:\Users\gabriel_correia\Desktop\Front-Teste\shark-front\tests\functional\User.robot">
+<test id="s1-s1-s2-t1" name="Deve acusar que usuário não existe" line="18">
+<kw name="Iniciar navegador" library="Functional" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>headless=false</arg>
+<arg>slowMo=00:00:00.7</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20231116 15:56:38.545" level="INFO">Switching browser to browser=6aaa15bc-a342-495d-9b7b-dced0b20a72f</msg>
+<msg timestamp="20231116 15:56:38.547" level="INFO">Successfully changed active browser: browser=6aaa15bc-a342-495d-9b7b-dced0b20a72f</msg>
+<msg timestamp="20231116 15:56:38.547" level="INFO">Reusing existing browser with id: browser=6aaa15bc-a342-495d-9b7b-dced0b20a72f</msg>
+<status status="PASS" starttime="20231116 15:56:38.544" endtime="20231116 15:56:38.548"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20231116 15:56:38.548" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": "",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg timestamp="20231116 15:56:38.558" level="INFO">Successfully created context. </msg>
+<msg timestamp="20231116 15:56:38.559" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': '', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<status status="PASS" starttime="20231116 15:56:38.548" endtime="20231116 15:56:38.559"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${LINK}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20231116 15:56:41.474" level="INFO">Successfully initialized new page object and opened url: http://localhost:5173/#/login</msg>
+<status status="PASS" starttime="20231116 15:56:38.559" endtime="20231116 15:56:41.475"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>${LARGURA_JANELA}</arg>
+<arg>${ALTURA_JANELA}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20231116 15:56:41.484" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20231116 15:56:41.475" endtime="20231116 15:56:41.484"/>
+</kw>
+<status status="PASS" starttime="20231116 15:56:38.544" endtime="20231116 15:56:41.484"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>xpath=//*[@id="exampleInputEmail1"]</arg>
+<arg>teste23455565@gmail.com</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231116 15:56:41.485" level="INFO">Types the text 'teste23455565@gmail.com' in the given field.</msg>
+<status status="PASS" starttime="20231116 15:56:41.485" endtime="20231116 15:56:42.976"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>xpath=//*[@id="exampleInputPassword1"]</arg>
+<arg>1258</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231116 15:56:42.977" level="INFO">Types the text '1258' in the given field.</msg>
+<status status="PASS" starttime="20231116 15:56:42.977" endtime="20231116 15:56:44.412"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=//*[@type="submit"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20231116 15:56:44.413" endtime="20231116 15:56:45.152"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>text=Usuário ou senha incorretos!</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20231116 15:56:45.159" level="INFO">Waited for Element with selector text=Usuário ou senha incorretos! at state visible</msg>
+<status status="PASS" starttime="20231116 15:56:45.153" endtime="20231116 15:56:45.159"/>
+</kw>
+<kw name="finalizar teste" library="Functional" type="TEARDOWN">
+<kw name="Take Screenshot" library="Browser">
+<arg>fullPage=true</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20231116 15:56:45.273" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-2.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-2.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231116 15:56:45.160" endtime="20231116 15:56:45.274"/>
+</kw>
+<status status="PASS" starttime="20231116 15:56:45.160" endtime="20231116 15:56:45.274"/>
+</kw>
+<status status="PASS" starttime="20231116 15:56:38.539" endtime="20231116 15:56:45.274"/>
+</test>
+<test id="s1-s1-s2-t2" name="Deve logar usuário" line="24">
+<kw name="Iniciar navegador" library="Functional" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>chromium</arg>
+<arg>headless=false</arg>
+<arg>slowMo=00:00:00.7</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20231116 15:56:45.327" level="INFO">Switching browser to browser=6aaa15bc-a342-495d-9b7b-dced0b20a72f</msg>
+<msg timestamp="20231116 15:56:45.329" level="INFO">Successfully changed active browser: browser=6aaa15bc-a342-495d-9b7b-dced0b20a72f</msg>
+<msg timestamp="20231116 15:56:45.329" level="INFO">Reusing existing browser with id: browser=6aaa15bc-a342-495d-9b7b-dced0b20a72f</msg>
+<status status="PASS" starttime="20231116 15:56:45.327" endtime="20231116 15:56:45.330"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20231116 15:56:45.330" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "hideRfBrowser": "",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg timestamp="20231116 15:56:45.338" level="INFO">Successfully created context. </msg>
+<msg timestamp="20231116 15:56:45.338" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'hideRfBrowser': '', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<status status="PASS" starttime="20231116 15:56:45.330" endtime="20231116 15:56:45.338"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${LINK}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20231116 15:56:48.204" level="INFO">Successfully initialized new page object and opened url: http://localhost:5173/#/login</msg>
+<status status="PASS" starttime="20231116 15:56:45.338" endtime="20231116 15:56:48.205"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>${LARGURA_JANELA}</arg>
+<arg>${ALTURA_JANELA}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20231116 15:56:48.216" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20231116 15:56:48.205" endtime="20231116 15:56:48.216"/>
+</kw>
+<status status="PASS" starttime="20231116 15:56:45.326" endtime="20231116 15:56:48.216"/>
+</kw>
+<kw name="Logar" library="LoginKeyWords">
+<kw name="Click" library="Browser">
+<arg>text=Logout</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20231116 15:56:48.217" endtime="20231116 15:56:48.972"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>xpath=//*[@id="exampleInputEmail1"]</arg>
+<arg>${EMAIL}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231116 15:56:48.973" level="INFO">Types the text 'senai1@gmail.com' in the given field.</msg>
+<status status="PASS" starttime="20231116 15:56:48.973" endtime="20231116 15:56:50.434"/>
+</kw>
+<kw name="Type Text" library="Browser">
+<arg>xpath=//*[@id="exampleInputPassword1"]</arg>
+<arg>${SENHA}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20231116 15:56:50.434" level="INFO">Types the text '123456' in the given field.</msg>
+<status status="PASS" starttime="20231116 15:56:50.434" endtime="20231116 15:56:51.878"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>text=Login</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20231116 15:56:51.878" endtime="20231116 15:56:52.614"/>
+</kw>
+<status status="PASS" starttime="20231116 15:56:48.217" endtime="20231116 15:56:52.615"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>text=Id</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20231116 15:56:52.620" level="INFO">Waited for Element with selector text=Id at state visible</msg>
+<status status="PASS" starttime="20231116 15:56:52.615" endtime="20231116 15:56:52.620"/>
+</kw>
+<kw name="finalizar teste" library="Functional" type="TEARDOWN">
+<kw name="Take Screenshot" library="Browser">
+<arg>fullPage=true</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20231116 15:56:52.740" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-3.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-3.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20231116 15:56:52.621" endtime="20231116 15:56:52.740"/>
+</kw>
+<status status="PASS" starttime="20231116 15:56:52.621" endtime="20231116 15:56:52.740"/>
+</kw>
+<status status="PASS" starttime="20231116 15:56:45.324" endtime="20231116 15:56:52.741"/>
+</test>
+<status status="PASS" starttime="20231116 15:56:38.532" endtime="20231116 15:56:52.790"/>
+</suite>
+<status status="PASS" starttime="20231116 15:56:21.674" endtime="20231116 15:56:52.796"/>
+</suite>
+<status status="PASS" starttime="20231116 15:56:21.655" endtime="20231116 15:56:52.799"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="Functional">Tests.Functional</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Cliente">Tests.Functional.Cliente</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s2" name="User">Tests.Functional.User</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
