@@ -22,4 +22,4 @@ Deve cadastrar cliente
     Click    xpath=//*[@type='submit']
 
 Deve excluir cliente
-    Click    xpath=//*[]
+    Click    xpath=//*[] 
