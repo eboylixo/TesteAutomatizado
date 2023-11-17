@@ -6,40 +6,37 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <CadastroCliente @ao-salvar-cliente="listarClientes" class="col-10"/>
+        <CadastroCliente @ao-salvar-cliente="store.carregarClientes" class="col-10"/>
     </div>
 </template>
 
 <script lang="ts">
 import http from '@/http';
-import type Cliente from '@/interfaces/Cliente';
-import { defineComponent } from 'vue';
+import { defineComponent, computed } from 'vue';
 import ListaCliente from './ListaCliente.vue';
 import CadastroCliente from './CadastroCliente.vue';
+import { useStore } from '@/store';
 
 export default defineComponent({
     name: "PageCliente",
-    data() {
-        return {
-            clientes: [] as Cliente[]
-        }
-    },
-    mounted() {
-        this.listarClientes();
-    },
     methods: {
-        async listarClientes() {
-            const response = await http.get("/cliente");
-            this.clientes = response.data;
-        },
         async excluirCliente(id: number) {
             await http.delete("/cliente/" + id);
-            this.listarClientes();
+            this.store.carregarClientes();
         }
     },
     components: {
         ListaCliente,
         CadastroCliente,
+    },
+    setup() {
+        const store = useStore();
+        store.carregarClientes();
+        const clientes = computed(() => store.clientes);
+        return {
+            clientes,
+            store
+        }
     }
 })
 </script>
